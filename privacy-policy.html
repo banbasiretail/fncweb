@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Free News Club</title>
+<style>
+  :root{
+    --navy:#062565;
+    --navy-deep:#04173f;
+    --gold:#FFCA0A;
+    --gold-soft:#fff8dd;
+    --paper:#f6f7fb;
+    --paper-raised:#ffffff;
+    --line:#e1e4f0;
+    --ink:#0a1230;
+    --muted:#666c88;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    --mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* Masthead */
+  .masthead{
+    background:var(--navy);
+    color:#fff;
+    padding:2.4rem 6vw 1.8rem;
+  }
+  .masthead-inner{
+    max-width:760px;
+    margin:0 auto;
+  }
+  .masthead-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family:var(--mono);
+    font-size:0.7rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.55);
+    margin-bottom:1.6rem;
+  }
+  .masthead-top a{
+    color:rgba(255,255,255,0.55);
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:0.4rem;
+  }
+  .masthead-top a:hover{color:var(--gold);}
+  .masthead-top .home-icon{
+    width:16px; height:16px;
+    border-radius:4px;
+    overflow:hidden;
+    flex-shrink:0;
+  }
+  .masthead-top .home-icon img{width:100%; height:100%; display:block; object-fit:cover;}
+
+  .masthead h1{
+    font-weight:800;
+    font-size:2.2rem;
+    letter-spacing:-0.02em;
+    margin:0 0 0.4rem;
+  }
+  .masthead h1 .dot{color:var(--gold);}
+  .masthead .tagline{
+    color:rgba(255,255,255,0.68);
+    font-size:1rem;
+    max-width:44ch;
+  }
+  .masthead .meta-row{
+    margin-top:1.3rem;
+    display:flex;
+    gap:1.6rem;
+    flex-wrap:wrap;
+    font-size:0.8rem;
+    color:rgba(255,255,255,0.55);
+  }
+  .masthead .meta-row b{color:var(--gold); font-weight:700;}
+
+  /* Layout */
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:2.6rem 6vw 5rem;
+  }
+
+  .intro{
+    font-size:1.05rem;
+    color:#2b2f45;
+    background:var(--gold-soft);
+    border-left:3px solid var(--gold);
+    padding:1rem 1.2rem;
+    border-radius:0 8px 8px 0;
+    margin:0 0 2.6rem;
+  }
+
+  /* Table of contents */
+  .toc{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:1.4rem 1.6rem;
+    margin-bottom:3rem;
+  }
+  .toc-title{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--navy);
+    margin-bottom:0.9rem;
+    font-weight:700;
+  }
+  .toc ol{
+    columns:2;
+    -webkit-columns:2;
+    column-gap:2rem;
+    margin:0;
+    padding-left:1.2rem;
+    font-size:0.88rem;
+  }
+  .toc li{margin-bottom:0.45rem; break-inside:avoid;}
+  .toc a{color:var(--ink); text-decoration:none; border-bottom:1px solid transparent;}
+  .toc a:hover{border-bottom-color:var(--navy); color:var(--navy);}
+
+  /* Sections */
+  section{
+    margin-bottom:2.6rem;
+    scroll-margin-top:1.5rem;
+  }
+  section h2{
+    font-weight:800;
+    font-size:1.32rem;
+    display:flex;
+    align-items:baseline;
+    gap:0.7rem;
+    margin:0 0 0.9rem;
+    padding-bottom:0.6rem;
+    border-bottom:2px solid var(--line);
+    color:var(--navy);
+  }
+  section h2 .num{
+    font-family:var(--mono);
+    font-size:0.85rem;
+    color:var(--navy);
+    background:var(--gold);
+    padding:0.15rem 0.45rem;
+    border-radius:5px;
+    font-weight:700;
+  }
+  section p{margin:0 0 0.9rem; color:#2a2a3a;}
+  section ul{margin:0 0 0.9rem; padding-left:1.3rem;}
+  section li{margin-bottom:0.4rem;}
+  section a{color:var(--navy); font-weight:600;}
+
+  .not-collected-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:0.4rem 1.2rem;
+    list-style:none;
+    padding:0;
+    margin:0 0 1rem;
+  }
+  .not-collected-grid li{
+    display:flex;
+    align-items:flex-start;
+    gap:0.5rem;
+    font-size:0.92rem;
+    color:#2a2a3a;
+  }
+  .not-collected-grid li::before{
+    content:"—";
+    color:var(--navy);
+    font-weight:700;
+    flex-shrink:0;
+  }
+
+  .badge-row{
+    display:flex;
+    gap:0.6rem;
+    flex-wrap:wrap;
+    margin:0.6rem 0 1.2rem;
+  }
+  .badge{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.03em;
+    background:var(--navy);
+    color:#fff;
+    border:1px solid var(--navy);
+    border-radius:5px;
+    padding:0.3rem 0.6rem;
+  }
+  .badge.off{
+    background:#eef0f7;
+    color:var(--muted);
+    border-color:var(--line);
+    text-decoration:line-through;
+  }
+
+  .callout{
+    background:var(--gold-soft);
+    border-left:3px solid var(--gold);
+    padding:0.9rem 1.1rem;
+    font-size:0.9rem;
+    border-radius:0 8px 8px 0;
+    margin:1rem 0;
+  }
+  .callout b{color:var(--navy);}
+
+  .contact-card{
+    background:var(--navy);
+    color:#fff;
+    border-radius:10px;
+    padding:1.5rem 1.7rem;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    row-gap:0.6rem;
+    column-gap:1rem;
+    font-size:0.94rem;
+  }
+  .contact-card dt{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:rgba(255,255,255,0.55);
+    align-self:center;
+  }
+  .contact-card dd{margin:0; align-self:center;}
+  .contact-card a{color:var(--gold); font-weight:700; text-decoration:none;}
+  .contact-card a:hover{text-decoration:underline;}
+
+  footer{
+    max-width:760px;
+    margin:0 auto;
+    padding:2rem 6vw 3rem;
+    border-top:1px solid var(--line);
+    font-size:0.8rem;
+    color:var(--muted);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:0.5rem;
+  }
+  footer a{color:var(--muted); text-decoration:none;}
+  footer a:hover{color:var(--navy);}
+
+  .back-to-top{
+    position:fixed;
+    bottom:1.5rem;
+    right:1.5rem;
+    width:2.6rem;
+    height:2.6rem;
+    border-radius:50%;
+    background:var(--navy);
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:1.1rem;
+    font-weight:700;
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity 0.25s ease, transform 0.25s ease;
+    pointer-events:none;
+    box-shadow:0 8px 20px -6px rgba(6,37,101,0.5);
+  }
+  .back-to-top.visible{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+
+  @media (max-width:600px){
+    .masthead h1{font-size:1.7rem;}
+    .toc ol{columns:1;}
+    .not-collected-grid{grid-template-columns:1fr;}
+    .contact-card{grid-template-columns:1fr;}
+    .contact-card dt{margin-top:0.4rem;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .back-to-top{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-top">
+      <a href="index.html"><span class="home-icon"><img src="app-icon.jpg" alt=""></span>Free News Club</a>
+      <span>SCoolG</span>
+    </div>
+    <h1>Privacy Policy<span class="dot">.</span></h1>
+    <div class="tagline">What Free News Club does — and mostly doesn't — do with your data.</div>
+    <div class="meta-row">
+      <span>Last Updated: <b>August 18, 2026</b></span>
+      <span>Developer: <b>SCoolG</b></span>
+      <span>Contact: <b>banbasi.retail@gmail.com</b></span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <p class="intro">Free News Club does not require an account, does not ask for your name or email, and does not track you across the web. This page explains, plainly, what little the app touches and why.</p>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">On this page</div>
+    <ol>
+      <li><a href="#s1">Information We Collect</a></li>
+      <li><a href="#s2">Device Permissions</a></li>
+      <li><a href="#s3">YouTube API Services</a></li>
+      <li><a href="#s4">Third-Party Content</a></li>
+      <li><a href="#s5">Data Storage</a></li>
+      <li><a href="#s6">Advertising</a></li>
+      <li><a href="#s7">Analytics &amp; Crash Reporting</a></li>
+      <li><a href="#s8">Notifications</a></li>
+      <li><a href="#s9">Children's Privacy</a></li>
+      <li><a href="#s10">Third-Party Services</a></li>
+      <li><a href="#s11">Data Security</a></li>
+      <li><a href="#s12">Changes to This Policy</a></li>
+      <li><a href="#s13">Your Privacy Choices</a></li>
+      <li><a href="#s14">Contact Us</a></li>
+      <li><a href="#s15">YouTube Content Disclaimer</a></li>
+      <li><a href="#s16">Acceptance</a></li>
+    </ol>
+  </nav>
+
+  <section id="s1">
+    <h2><span class="num">01</span>Information We Collect</h2>
+    <p>At the current time, Free News Club does not collect, store, or require users to provide personal information. The App currently does not require:</p>
+    <ul class="not-collected-grid">
+      <li>User registration or account creation</li>
+      <li>Login credentials</li>
+      <li>Name</li>
+      <li>Email address</li>
+      <li>Phone number</li>
+      <li>Physical address</li>
+      <li>Precise location information</li>
+      <li>Contacts</li>
+      <li>Photos or media from your device</li>
+      <li>Personal files</li>
+      <li>Payment information</li>
+      <li>User-generated content</li>
+      <li>Passwords or authentication information</li>
+    </ul>
+    <p>The App also does not currently provide features such as user profiles, favorites, bookmarks, or personalized user accounts.</p>
+  </section>
+
+  <section id="s2">
+    <h2><span class="num">02</span>Device Permissions</h2>
+    <p>Free News Club currently requests only one Android permission:</p>
+    <div class="badge-row"><span class="badge">INTERNET</span></div>
+    <p>This permission is required so the App can connect to online services and retrieve/display content provided through the YouTube API and related online resources.</p>
+    <p>Free News Club does not request access to your contacts, camera, microphone, location, storage, phone information, or other sensitive device resources.</p>
+  </section>
+
+  <section id="s3">
+    <h2><span class="num">03</span>YouTube API Services</h2>
+    <p>Free News Club uses YouTube API Services to retrieve publicly available information about selected YouTube channels and their videos, and presents that content in an organized interface to make it easier to discover and view news and educational videos from selected channels.</p>
+    <p>The video and channel content displayed through the App is provided by YouTube and/or the respective content creators. Free News Club does not claim ownership of third-party YouTube content. When you watch YouTube videos through the App, that content remains subject to YouTube's applicable terms, policies, and the rights of the respective content owners.</p>
+    <p>YouTube API Services are provided by YouTube, and their use is subject to the applicable YouTube API Services Terms of Service and Developer Policies. You can review:</p>
+    <ul>
+      <li><a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube Terms of Service</a></li>
+      <li><a href="https://developers.google.com/youtube/terms/api-services-terms-of-service" target="_blank" rel="noopener">YouTube API Services Terms of Service</a></li>
+      <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+    </ul>
+    <p>Free News Club is not affiliated with, sponsored by, or endorsed by YouTube unless explicitly stated otherwise.</p>
+  </section>
+
+  <section id="s4">
+    <h2><span class="num">04</span>Third-Party Content</h2>
+    <p>Free News Club provides access to and displays content originating from third-party YouTube channels. We do not own or claim ownership of the videos, channel names, thumbnails, titles, descriptions, or other third-party content made available through YouTube. All applicable rights in third-party content remain with their respective owners or licensors.</p>
+    <p>If you believe that any content displayed through the App infringes your rights, you may contact us using the information in the Contact Us section below. We will review legitimate concerns and take appropriate action where applicable.</p>
+  </section>
+
+  <section id="s5">
+    <h2><span class="num">05</span>Data Storage</h2>
+    <p>Free News Club currently does not maintain user accounts or store personal user information on our servers. The current version of the App also does not intentionally store personal information locally on your device.</p>
+    <p>The App may temporarily process information necessary to retrieve and display online content, including information received from the YouTube API, as required for the normal operation of the App.</p>
+  </section>
+
+  <section id="s6">
+    <h2><span class="num">06</span>Advertising</h2>
+    <div class="badge-row"><span class="badge off">Google AdMob</span><span class="badge off">Other ad SDKs</span></div>
+    <p>The current version of Free News Club does not use Google AdMob or other advertising SDKs. If advertising services are introduced in a future version of the App, this Privacy Policy will be updated to explain the relevant data collection, processing, and advertising practices before or when those features become applicable.</p>
+  </section>
+
+  <section id="s7">
+    <h2><span class="num">07</span>Analytics and Crash Reporting</h2>
+    <div class="badge-row"><span class="badge off">Firebase Analytics</span><span class="badge off">Firebase Crashlytics</span></div>
+    <p>The current version of Free News Club does not use Firebase Analytics, Firebase Crashlytics, or similar analytics/crash-reporting services. If such services are introduced in a future version, this Privacy Policy will be updated accordingly.</p>
+  </section>
+
+  <section id="s8">
+    <h2><span class="num">08</span>Notifications</h2>
+    <p>The current version of Free News Club does not send push notifications and does not request notification-related permissions. If notification functionality is introduced in a future version, the applicable privacy practices will be described in an updated version of this Privacy Policy.</p>
+  </section>
+
+  <section id="s9">
+    <h2><span class="num">09</span>Children's Privacy</h2>
+    <p>Free News Club is intended for a general audience and is not specifically directed toward children. We do not knowingly collect personal information from children through the App. Because the current version of the App does not require registration or collect personal information, users can access the App without providing personal information to us.</p>
+  </section>
+
+  <section id="s10">
+    <h2><span class="num">10</span>Third-Party Services</h2>
+    <p>The App may interact with third-party services, particularly YouTube API Services, in order to retrieve and display content. Third-party services may have their own terms of service and privacy policies. We encourage users to review the privacy policies and terms of any third-party service they interact with.</p>
+    <p>For information about how Google handles information in connection with its services, please review the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+  </section>
+
+  <section id="s11">
+    <h2><span class="num">11</span>Data Security</h2>
+    <p>Although Free News Club currently does not collect personal user information, we take reasonable measures to maintain the security and integrity of the App and its connections to online services. No method of transmission over the Internet or electronic storage can be guaranteed to be completely secure.</p>
+  </section>
+
+  <section id="s12">
+    <h2><span class="num">12</span>Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time as the App develops or as our services, features, or legal requirements change. For example, if we introduce features such as:</p>
+    <ul>
+      <li>User accounts or login</li>
+      <li>Advertising</li>
+      <li>Analytics</li>
+      <li>Crash reporting</li>
+      <li>Push notifications</li>
+      <li>Personalized features</li>
+      <li>Favorites or bookmarks</li>
+      <li>Additional third-party services</li>
+      <li>Any form of personal-data collection</li>
+    </ul>
+    <p>we will update this Privacy Policy to describe the relevant practices. The updated Privacy Policy will be published on this page with a revised "Last Updated" date. We encourage you to periodically review this Privacy Policy for any changes.</p>
+  </section>
+
+  <section id="s13">
+    <h2><span class="num">13</span>Your Privacy Choices</h2>
+    <p>Because the current version of Free News Club does not collect or maintain personal user accounts or personal information, there are currently no account-management or personal-data deletion features required within the App. If our data practices change in the future, we will provide appropriate choices and information as required by applicable law.</p>
+  </section>
+
+  <section id="s14">
+    <h2><span class="num">14</span>Contact Us</h2>
+    <p>If you have questions, concerns, suggestions, or requests regarding this Privacy Policy or the privacy practices of Free News Club, you can contact us at:</p>
+    <dl class="contact-card">
+      <dt>Developer</dt><dd>SCoolG</dd>
+      <dt>Application</dt><dd>Free News Club</dd>
+      <dt>Email</dt><dd><a href="mailto:banbasi.retail@gmail.com">banbasi.retail@gmail.com</a></dd>
+    </dl>
+    <p style="margin-top:0.9rem;">We will make reasonable efforts to respond to privacy-related inquiries.</p>
+  </section>
+
+  <section id="s15">
+    <h2><span class="num">15</span>Disclaimer Regarding YouTube Content</h2>
+    <p>Free News Club is an independent application that organizes and presents publicly available YouTube channel and video information using YouTube API Services. Free News Club does not claim ownership of third-party videos or other third-party content displayed through the App. The respective content creators and rights holders retain their applicable rights in their content. The availability, accuracy, or continued availability of third-party YouTube content is outside our control.</p>
+    <p>Use of YouTube API Services through Free News Club is subject to the applicable YouTube API Services Terms of Service and Developer Policies.</p>
+    <div class="callout"><b>Note:</b> Free News Club is not an official YouTube application and is not affiliated with or endorsed by YouTube.</div>
+  </section>
+
+  <section id="s16">
+    <h2><span class="num">16</span>Acceptance of This Privacy Policy</h2>
+    <p>By using Free News Club, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with this Privacy Policy, please discontinue use of the App.</p>
+  </section>
+
+</div>
+
+<footer>
+  <span>© 2026 SCoolG. All rights reserved.</span>
+  <a href="index.html">← Back to Free News Club</a>
+</footer>
+
+<a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
+<script>
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+</script>
+
+</body>
+</html>
