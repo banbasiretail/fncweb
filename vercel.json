@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/video",
+      "destination": "/videos",
+      "permanent": false
+    },
+    {
+      "source": "/video/:path*",
+      "destination": "/videos",
+      "permanent": false
+    }
+  ]
+}
