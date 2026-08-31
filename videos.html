@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -300,3 +301,307 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free News Club — Get the App</title>
+<style>
+  :root{
+    --navy:#062565;
+    --navy-deep:#04173f;
+    --gold:#FFCA0A;
+    --gold-soft:#fff4c4;
+    --paper:#f6f7fb;
+    --white:#ffffff;
+    --ink:#0a1230;
+    --muted:#6b7290;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    --mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:var(--sans);
+    background:var(--navy);
+    color:var(--white);
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  /* Ambient broadcast rings behind hero */
+  .rings{
+    position:absolute;
+    top:-120px;
+    left:50%;
+    transform:translateX(-50%);
+    width:900px;
+    height:900px;
+    pointer-events:none;
+    z-index:0;
+  }
+  .rings span{
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    border:1px solid rgba(255,202,10,0.14);
+  }
+  .rings span:nth-child(1){inset:170px;}
+  .rings span:nth-child(2){inset:80px;}
+  .rings span:nth-child(3){inset:0;}
+
+  header{
+    position:relative;
+    z-index:2;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1.6rem 6vw 0;
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.55);
+  }
+  header .dot{
+    color:var(--gold);
+  }
+
+  main{
+    position:relative;
+    z-index:2;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:3rem 6vw 4rem;
+  }
+
+  .icon-frame{
+    width:150px;
+    height:150px;
+    border-radius:34px;
+    overflow:hidden;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.08),
+      0 30px 60px -20px rgba(0,0,0,0.55),
+      0 0 80px -10px rgba(255,202,10,0.25);
+    margin-bottom:1.8rem;
+    animation:rise 0.7s cubic-bezier(.2,.9,.25,1) both;
+  }
+  .icon-frame img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+  }
+
+  @keyframes rise{
+    from{opacity:0; transform:translateY(18px) scale(0.96);}
+    to{opacity:1; transform:translateY(0) scale(1);}
+  }
+
+  h1{
+    font-size:clamp(2.1rem,5.5vw,3.2rem);
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    margin:0 0 0.7rem;
+    font-weight:800;
+  }
+  h1 .accent{color:var(--gold);}
+
+  .tagline{
+    font-size:1.05rem;
+    color:rgba(255,255,255,0.68);
+    max-width:36ch;
+    margin:0 0 2.4rem;
+    line-height:1.55;
+  }
+
+  .store-row{
+    display:flex;
+    gap:0.9rem;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-bottom:0.5rem;
+  }
+
+  .store-btn{
+    display:flex;
+    align-items:center;
+    gap:0.65rem;
+    background:var(--white);
+    color:var(--navy);
+    text-decoration:none;
+    padding:0.75rem 1.3rem;
+    border-radius:12px;
+    font-weight:700;
+    font-size:0.95rem;
+    border:1px solid transparent;
+    transition:transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    box-shadow:0 8px 20px -8px rgba(0,0,0,0.4);
+  }
+  .store-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 26px -10px rgba(0,0,0,0.5);
+  }
+  .store-btn.android{background:var(--gold); color:var(--navy-deep);}
+  .store-btn.ios{background:var(--white); color:var(--navy);}
+  .store-btn svg{width:22px; height:22px; flex-shrink:0;}
+  .store-btn .btn-text{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    line-height:1.15;
+  }
+  .store-btn .btn-text small{
+    font-size:0.62rem;
+    font-weight:500;
+    opacity:0.7;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+  .store-btn .btn-text span{font-size:0.95rem;}
+
+  .policy-link{
+    margin-top:2.2rem;
+    font-size:0.85rem;
+  }
+  .policy-link a{
+    color:rgba(255,255,255,0.6);
+    text-decoration:none;
+    border-bottom:1px solid rgba(255,255,255,0.25);
+    padding-bottom:1px;
+    transition:color 0.15s ease, border-color 0.15s ease;
+  }
+  .policy-link a:hover{
+    color:var(--gold);
+    border-color:var(--gold);
+  }
+
+  .contact-section{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:480px;
+    margin:0 auto 1rem;
+    padding:1.6rem 1.8rem;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:18px;
+    backdrop-filter:blur(4px);
+  }
+  .contact-section h2{
+    margin:0 0 1rem;
+    font-size:0.72rem;
+    font-family:var(--mono);
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  .contact-row{
+    display:flex;
+    align-items:center;
+    gap:0.7rem;
+    justify-content:center;
+    margin-bottom:0.85rem;
+  }
+  .contact-row:last-child{margin-bottom:0;}
+  .contact-row svg{
+    width:20px;
+    height:20px;
+    flex-shrink:0;
+    color:var(--gold);
+  }
+  .contact-row a{
+    color:var(--white);
+    text-decoration:none;
+    font-size:0.98rem;
+    font-weight:600;
+    border-bottom:1px solid rgba(255,255,255,0.25);
+    padding-bottom:1px;
+    transition:color 0.15s ease, border-color 0.15s ease;
+  }
+  .contact-row a:hover{
+    color:var(--gold);
+    border-color:var(--gold);
+  }
+
+  footer{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:1.4rem 1.5rem 2rem;
+    font-size:0.75rem;
+    color:rgba(255,255,255,0.35);
+    font-family:var(--mono);
+  }
+
+  @media (max-width:420px){
+    .store-row{flex-direction:column; width:100%; max-width:280px;}
+    .store-btn{justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<div class="rings" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<header>
+  <span>Free News Club</span>
+  <span class="dot">●</span>
+</header>
+
+<main>
+  <div class="icon-frame">
+    <img src="app-icon.jpg" alt="Free News Club app icon">
+  </div>
+
+  <h1>Free News<span class="accent">.</span><br>Straight to your feed<span class="accent">.</span></h1>
+  <p class="tagline">Curated news &amp; educational videos, organized and easy to browse — get the Free News Club app.</p>
+
+  <div class="store-row">
+    <a class="store-btn android" href="https://play.google.com/store/apps/details?id=com.news.fnc" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.6 2.6c-.4.2-.6.6-.6 1v16.8c0 .4.2.8.6 1l9.6-9.4-9.6-9.4z" fill="#04173f"/>
+        <path d="M16.6 9.6l-2.9-1.7-2.4 2.4L14.2 13.4l2.4-2.4 2.9-1.7c.6-.4.6-1.3 0-1.7z" fill="#04173f"/>
+        <path d="M13.7 12.3L4.1 21.7c.3.1.7.1 1 0l10.9-6.2-2.3-3.2z" fill="#04173f"/>
+        <path d="M13.7 11.7L16 8.4 5.1 2.3c-.3-.1-.7-.1-1 0l9.6 9.4z" fill="#04173f"/>
+      </svg>
+      <span class="btn-text"><small>Get it on</small><span>Google Play</span></span>
+    </a>
+    <a class="store-btn ios" href="https://apps.apple.com/app/id0000000000" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="#062565" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.4 1.3c.1 1-.3 2-.9 2.7-.6.8-1.6 1.4-2.6 1.3-.1-1 .4-2 1-2.7.6-.7 1.7-1.3 2.5-1.3zM19.9 17c-.5 1.1-.7 1.6-1.4 2.6-.9 1.4-2.2 3.1-3.8 3.1-1.4 0-1.8-.9-3.7-.9-1.9 0-2.4.9-3.7.9-1.6 0-2.8-1.5-3.7-2.9C1 16.9.4 13 1.9 10.4c1-1.8 2.8-2.9 4.7-2.9 1.5 0 2.9 1 3.8 1s2.6-1.2 4.4-1c.7 0 2.8.3 4.1 2.2-.1.1-2.4 1.4-2.4 4.2 0 3.3 2.9 4.4 3 4.4-.1.3-.5 1.5-1.6 2.7z"/>
+      </svg>
+      <span class="btn-text"><small>Download on the</small><span>App Store</span></span>
+    </a>
+  </div>
+
+  <p class="policy-link"><a href="privacy-policy.html">Privacy Policy</a></p>
+
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <div class="contact-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 6.5l9 6 9-6"/><rect x="3" y="4.5" width="18" height="15" rx="2"/></svg>
+      <a href="mailto:banbasi.retail@gmail.com">banbasi.retail@gmail.com</a>
+    </div>
+    <div class="contact-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2.1z"/></svg>
+      <a href="tel:+918010855140">+91 80108 55140</a>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 SCoolG · Free News Club</footer>
+
+</body>
+</html>
+>>>>>>> 2e0160dd0d341c4905b7d7af5ed90742971300ae
