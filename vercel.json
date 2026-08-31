@@ -1,17 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/video",
-      "destination": "/videos",
-      "permanent": false
-    },
-    {
-      "source": "/video/:path*",
-      "destination": "/videos",
-      "permanent": false
-    }
+  "rewrites": [
+    { "source": "/video/:id", "destination": "/api/video?id=:id" },
+    { "source": "/video", "destination": "/api/video" }
   ]
 }
