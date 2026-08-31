@@ -176,6 +176,28 @@ function renderPage(id, meta) {
     padding:24px;
   }
   .card{width:100%;max-width:460px;text-align:center;}
+  .brand{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    margin:0 0 20px;
+    text-decoration:none;
+    color:var(--white);
+  }
+  .icon-frame{
+    width:54px;
+    height:54px;
+    border-radius:13px;
+    overflow:hidden;
+    flex:none;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.08),
+      0 10px 24px -8px rgba(0,0,0,0.55),
+      0 0 40px -8px rgba(255,202,10,0.25);
+  }
+  .icon-frame img{width:100%;height:100%;display:block;object-fit:cover;}
+  .brand-name{font-weight:700;font-size:1.05rem;letter-spacing:-0.01em;}
   .poster{
     position:relative;
     display:block;
@@ -226,6 +248,13 @@ function renderPage(id, meta) {
 </head>
 <body>
   <main class="card">
+    <a class="brand" href="${SITE_URL}">
+      <span class="icon-frame">
+        <img src="${SITE_URL}/app-icon.jpg" alt="Free News Club app icon">
+      </span>
+      <span class="brand-name">Free News Club</span>
+    </a>
+
     <a class="poster" href="${canonical}" id="open">
       <img src="${thumbnail(id, 'maxresdefault')}" alt="${title}"
            onerror="this.onerror=null;this.src='${previewImage}';">
